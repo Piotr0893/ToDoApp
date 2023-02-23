@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% if searched %}
+    <h1> You Searched For {{searched}}</h1>
+    <br/>
+        {% for task in tasks %}
+            <a href ="{% url 'Task_Show' task.id %}"  class="btn btn-primary">{{ task }} </a>  <br/>
+            <br/>
+
+        {% endfor %}
+
+    {% else %}
+    <h1> Hey! You Forgot To Search For A Task...</h1>
+    {% endif %}
+
+{% endblock  %}

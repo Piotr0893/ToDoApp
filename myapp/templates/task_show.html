@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+   
+     <div class="card">
+        <div class="card-header">
+            Task
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">{{task}}</h5>
+          <p class="card-text"><ul>
+         <li> Status: {{task.Status}} </li>
+         <li> Due Date: {{task.Due_Date}}</li>   
+         <li> Description: {{ task.Description }}</li>
+     </div>
+    </div>
+<br/>
+<a href="{% url 'Update_Task' task.id %}" class ="btn btn-success btn-sm">Update</a>
+
+
+{% endblock  %}

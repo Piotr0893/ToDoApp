@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1> Tasks</h1> <br/>
+    
+    <table class="table table-hover table-striped table-bordered">
+    {% for task in task_list %}
+   
+    <tr>
+        <td>
+            <a href="{% url 'Task_Show' task.id %}" class="btn btn-primary" >{{ task }}</a> 
+        <br/>
+        </td>
+        <td align = 'right'>
+            <a href="{% url 'Update_Task' task.id %}" class ="btn btn-success btn-sm">Update</a>
+        
+        <align = 'right'>
+            <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-danger btn-sm">Delete</a>
+        </td>
+       </tr>
+
+    {% endfor %}
+</table>
+ 
+
+{% endblock  %}
