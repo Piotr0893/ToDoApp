@@ -6,13 +6,13 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 
-def Cross_off(request, task_id):
+def Complete(request, task_id):
     task = Task.objects.get(pk=task_id)
     task.Status = True 
     task.save()
     return redirect('Task_List')	
 
-def Uncross(request, task_id):
+def Not_Complete(request, task_id):
     task = Task.objects.get(pk=task_id)
     task.Status = False
     task.save()
