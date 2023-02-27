@@ -1,2 +1,3 @@
 # ToDoApp
 A Django Web App that allows authenticated users to add, update, and delete To-Do tasks and shows whether it is completed or not
+![image](https://user-images.githubusercontent.com/122234066/221447245-a3f8c644-50f3-4950-b279-14f02e0ccd02.png)
