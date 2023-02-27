@@ -3,25 +3,29 @@
 {% block content %}
 
     <h1> Tasks</h1> <br/>
-    
-    <table class="table table-hover table-striped table-bordered">
+{% if task_list %}
+    <table class="table table-bordered">
     {% for task in task_list %}
-   
+ {% if task.Status %}
     <tr>
         <td>
-            <a href="{% url 'Task_Show' task.id %}" class="btn btn-primary" >{{ task }}</a> 
-        <br/>
-        </td>
-        <td align = 'right'>
-            <a href="{% url 'Update_Task' task.id %}" class ="btn btn-success btn-sm">Update</a>
-        
-        <align = 'right'>
-            <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-danger btn-sm">Delete</a>
-        </td>
+            <a href="{% url 'Task_Show' task.id %}" class="btn btn-success"> {{ task }} </a></td>
+            <td><center><class=btn btn-outline-primary>Completed </center></td>
+            <td align = 'right'><a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a></td>
+            <td align = 'right'> <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-outline-danger btn-sm">Delete</a></td>
        </tr>
-
+       {% else %}
+       <tr>
+       <td>
+            <a href="{% url 'Task_Show' task.id %}" class="btn btn-secondary"> {{ task }} </a></td>
+            <td><center><class="btn btn-outline-primary" >Not Completed</a></center></td>
+            <td align = 'right'><a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a></td>
+            <td align = 'right'> <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-outline-danger btn-sm">Delete</a></td>
+      </tr>
+      {% endif %}
     {% endfor %}
-</table>
- 
-
+    </table>
+{% endif %}
 {% endblock  %}
+
+

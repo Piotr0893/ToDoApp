@@ -15,7 +15,9 @@
      </div>
     </div>
 <br/>
-<a href="{% url 'Update_Task' task.id %}" class ="btn btn-success btn-sm">Update</a>
+<a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a>
+<a href="{% url 'Delete_Task' task.id %}" class ="btn btn-outline-danger btn-sm">Delete</a></td>
+
 
 
 {% endblock  %}
