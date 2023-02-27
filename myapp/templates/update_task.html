@@ -1,7 +1,8 @@
+<title>Update Task </title>
 {% extends "base.html" %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
     <h1> Update Task</h1>
     <br/>
     <form action="" method="POST">
@@ -10,5 +11,7 @@
         <br/><br/><br/>
         <input type="submit" value="Update" class="btn btn-success">
      </form>   
-
+     {% else %}
+     <h1> Sorr, You Must Be Logged In To See This Page</h1>
+     {% endif %}
 {% endblock %}
