@@ -10,7 +10,7 @@
     <tr>
         <td>
             <a href="{% url 'Task_Show' task.id %}" class="btn btn-success"> {{ task }} </a></td>
-            <td><center><class=btn btn-outline-primary>Completed </center></td>
+            <td  align = 'center'><div  class=" w-50 p-1 mb-1 bg-success text-white" ><center> Completed </center></div></td>
             <td align = 'right'><a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a></td>
             <td align = 'right'> <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-outline-danger btn-sm">Delete</a></td>
        </tr>
@@ -18,8 +18,8 @@
        <tr>
        <td>
             <a href="{% url 'Task_Show' task.id %}" class="btn btn-secondary"> {{ task }} </a></td>
-            <td><center><class="btn btn-outline-primary" >Not Completed</a></center></td>
-            <td align = 'right'><a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a></td>
+            <td align = 'center'><div class=" w-50 p-1 mb-1 bg-secondary text-white"><center>Not Completed</center></div></td>
+            <td align = 'right'><a href="{% url 'Update_Task' task.id %}" class ="btn btn-outline-success btn-sm">Update</a>
             <td align = 'right'> <a href="{% url 'Delete_Task' task.id %}" class ="btn btn-outline-danger btn-sm">Delete</a></td>
       </tr>
       {% endif %}
