@@ -6,7 +6,7 @@
     <h1> Tasks</h1> <br/>
 {% if task_list %}
     <table class="table table-bordered">
-    {% for task in task_list %}
+    {% for task in tasks %}
  {% if task.Status %}
     <tr>
         <td>
@@ -27,6 +27,23 @@
     {% endfor %}
     </table>
 {% endif %}
+
+<nav aria-label="Page navigation example">
+<ul class="pagination justify-content-center">
+
+{% if tasks.has_previous %}
+<li class="page-item"><a class="page-link" href ="?page=1">&laquo First</a></li>
+<li class="page-item"><a class="page-link" href ="?page= {{ tasks.previous_page_number }}">Previous</a></li>
+{% endif %}
+
+<li class="page-item disabled"><a href = "#" class="page-link" >Page {{ tasks.number}} of {{ tasks.paginator.num_pages }}</a></li>
+
+{% if tasks.has_next %}
+<li class="page-item "><a class="page-link" href="?page={{ tasks.next_page_number }}">Next</a></li>
+<li class="page-item "><a class="page-link" href="?page={{ tasks.paginator.num_pages }}">Last &raquo</a></li>
+{% endif %}
+</ul>
+</nav>
 {% endblock  %}
 
 
